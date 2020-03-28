@@ -1,11 +1,9 @@
 {
-  "name": "Vendure Storefront Demo",
-  "short_name": "Vendure Storefront",
-  "theme_color": "#558996",
-  "background_color": "#fafafa",
+  "name": "Tante Sören",
+  "short_name": "Tante",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/storefront/",
-  "start_url": "/storefront/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
