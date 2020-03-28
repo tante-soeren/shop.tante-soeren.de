@@ -1,0 +1,64 @@
+version: "3.7"
+
+services:
+  vendure:
+    build: ./admin
+    ports:
+      - 127.0.0.1:3000:3000
+      - 127.0.0.1:3001:3001
+      - 127.0.0.1:3002:3002
+    volumes:
+      - ./admin:/application
+    environment:
+      # database
+      MYSQL_HOST: 'db'
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USERNAME: "${MYSQL_USERNAME}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      # smtp
+      SMTP_DEV_MODE: "${SMTP_DEV_MODE}"
+      SMTP_FROM: "${SMTP_FROM}"
+      SMTP_ENDPOINT: "${SMTP_ENDPOINT}"
+      SMTP_USERNAME: "${SMTP_USERNAME}"
+      SMTP_PASSWORD: "${SMTP_PASSWORD}"
+      SMTP_HOST: "${SMTP_HOST}"
+      SMTP_PORT: "${SMTP_PORT}"
+
+  storefront:
+    build: ./storefront
+    ports:
+      - 127.0.0.1:4201:4201
+    volumes:
+      - ./storefront:/application
+
+  db:
+    image: mariadb:10
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./admin/vendure.sql:/docker-entrypoint-initdb.d/vendure.sql
+    environment:
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USERNAME}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 127.0.0.1:8080:80
+
+  nginx:
+    image: valian/docker-nginx-auto-ssl
+    restart: on-failure
+    ports:
+      - 0.0.0.0:80:80
+      - 0.0.0.0:443:443
+    volumes:
+      - ssl_data:/etc/resty-auto-ssl
+    environment:
+      ALLOWED_DOMAINS: 'shop.tante-soeren.de'
+      SITES: 'shop.tante-soeren.de=vendure:3000'
+
+volumes:
+  ssl_data:
+  mysql:

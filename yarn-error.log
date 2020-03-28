@@ -1,0 +1,49 @@
+Arguments: 
+  /home/user/.config/nvm/12.16.1/bin/node /home/user/.yarn/bin/yarn.js
+
+PATH: 
+  /home/user/.config/nvm/12.16.1/bin:/home/user/.yarn/bin:/home/user/.cargo/bin:/home/user/.local/bin:/home/user/go/bin:/home/user/.cargo/bin:/home/user/.cargo/bin:/home/user/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/user/.scripts/cron:/home/user/.scripts/i3cmds:/home/user/.scripts/statusbar:/home/user/.scripts/tools:/home/user/.scripts/:.:/home/user/.scripts/cron:/home/user/.scripts/i3cmds:/home/user/.scripts/statusbar:/home/user/.scripts/tools:/home/user/.scripts/:.
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/user/github/shop.tante-soeren.de-admin/package.json: Unexpected token } in JSON at position 504
+      at JSON.parse (<anonymous>)
+      at /home/user/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/user/.yarn/lib/cli.js:310:30)
+      at /home/user/.yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "shop.tante-soeren.de",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "run:server": "cd admin && yarn run:server",
+      "run:worker": "cd admin && yarn run:worker",
+      "run:worker": "cd storefront && yarn start",
+      "start": "concurrently yarn:run:*",
+      "build:admin": "cd admin && yarn build",
+      "build:storefront": "cd storefornt && yarn build",
+      "build": "concurrently yarn:build:*"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+      "concurrently": "5.1.0",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,23 @@
+{
+  "name": "shop.tante-soeren.de",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "run:mariadb": "docker run --rm -d --name vendure-mysql -e MYSQL_ROOT_PASSWORD=supersecret -e MYSQL_DATABASE=vendure -e MYSQL_USER=vendure -e MYSQL_PASSWORD=secretsuper -p 3306:3306 mariadb:10.4",
+    "run:server": "cd admin && yarn run:server",
+    "run:worker": "cd admin && yarn run:worker",
+    "run:worker": "cd storefront && yarn start",
+    "start": "concurrently yarn:run:*",
+    "build:admin": "cd admin && yarn build",
+    "build:storefront": "cd storefront && yarn build",
+    "build": "concurrently yarn:build:*",
+    "docker:run": "docker-compose -p vendure up vendure storefront db pma",
+    "docker:build": "docker-compose -p vendure build vendure storefront",
+    "docker:purge": "docker volume rm vendure_mariadb"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "concurrently": "5.1.0"
+  }
+}
