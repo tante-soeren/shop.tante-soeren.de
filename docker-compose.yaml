@@ -11,6 +11,8 @@ services:
     volumes:
       - ./admin:/application
     environment:
+      # general
+      HOSTNAME: "${HOSTNAME}"
       # database
       MYSQL_HOST: 'db'
       MYSQL_DATABASE: "${MYSQL_DATABASE}"

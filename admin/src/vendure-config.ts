@@ -22,7 +22,6 @@ let commonEmailProperties = {
     },
 }
 
-console.log(process.env)
 let emailPlugin
 if (process.env.SMTP_DEV_MODE) {
     emailPlugin = EmailPlugin.init({
