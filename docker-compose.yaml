@@ -12,8 +12,8 @@ services:
       - ./admin:/application
     environment:
       # admin
-      ADMIN_HOSTNAME: "${ADMIN_HOSTNAME}"
-      ADMIN_PORT: "${ADMIN_PORT}"
+      API_HOST: "${API_HOST}"
+      API_PORT: "${API_PORT}"
       # database
       MYSQL_HOST: 'db'
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
