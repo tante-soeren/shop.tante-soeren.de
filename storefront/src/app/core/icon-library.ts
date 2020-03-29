@@ -4,6 +4,7 @@ import {
     faInstagram,
     faTwitter,
     faYoutube,
+    faTelegram,
 } from '@fortawesome/free-brands-svg-icons';
 import {
     faBars,
@@ -28,6 +29,7 @@ export function buildIconLibrary(library: FaIconLibrary) {
         faFacebook,
         faInstagram,
         faYoutube,
+        faTelegram,
         faTimes,
         faMinus,
         faPlus,
