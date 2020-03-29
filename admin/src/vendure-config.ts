@@ -76,7 +76,10 @@ export const config: VendureConfig = {
         }),
         DefaultSearchPlugin,
         emailPlugin,
-        AdminUiPlugin.init({ port: 3002 }),
+        AdminUiPlugin.init({
+            hostname: process.env.HOSTNAME,
+            port: 3002,
+        }),
         BraintreePlugin
     ],
 };
