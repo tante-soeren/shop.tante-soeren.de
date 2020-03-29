@@ -6,7 +6,9 @@ COPY package.json .
 RUN yarn
 
 # Code
-VOLUME [ "/application" ]
+COPY . .
+RUN set -eux \
+  && npm run build:ssr
 
 # start
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "run", "serve:ssr" ]

@@ -3,6 +3,7 @@ version: "3.7"
 services:
   vendure:
     build: ./admin
+    # entrypoint: 'tail -f /dev/null'
     ports:
       - 127.0.0.1:3000:3000
       - 127.0.0.1:3001:3001
@@ -55,9 +56,10 @@ services:
       - 0.0.0.0:443:443
     volumes:
       - ssl_data:/etc/resty-auto-ssl
+      - ./.htpasswd:/etc/nginx/.htpasswd
+      - ./shop.tante-soeren.de.conf:/etc/nginx/conf.d/shop.tante-soeren.de.conf
     environment:
       ALLOWED_DOMAINS: 'shop.tante-soeren.de'
-      SITES: 'shop.tante-soeren.de=vendure:3000'
 
 volumes:
   ssl_data:

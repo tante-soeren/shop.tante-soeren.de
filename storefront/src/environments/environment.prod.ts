@@ -1,7 +1,7 @@
 export const environment = {
     production: true,
-    apiHost: 'https://demo.vendure.io',
+    apiHost: 'https://shop.tante-soeren.de',
     apiPort: 443,
     shopApiPath: 'shop-api',
-    baseHref: '/storefront/',
+    baseHref: '/',
 };
