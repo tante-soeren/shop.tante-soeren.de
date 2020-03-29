@@ -6,7 +6,7 @@
     "run:database": "docker-compose -p vendure up db pma",
     "run:server": "cd admin && yarn run:server",
     "run:worker": "cd admin && yarn run:worker",
-    "run:worker": "cd storefront && yarn start",
+    "run:storefront": "cd storefront && yarn start",
     "start": "concurrently yarn:run:*",
     "build:admin": "cd admin && yarn build",
     "build:storefront": "cd storefront && yarn build",
