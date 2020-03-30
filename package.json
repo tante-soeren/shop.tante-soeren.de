@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "run:database": "docker-compose -p vendure up db pma",
+    "docker:database": "docker-compose -p vendure up db pma",
     "run:server": "cd admin && yarn run:server",
     "run:worker": "cd admin && yarn run:worker",
     "run:storefront": "cd storefront && yarn start",

@@ -10,6 +10,7 @@ services:
       - 127.0.0.1:3002:3002
     volumes:
       - ./admin:/application
+      - assets:/application/static/assets
     environment:
       # admin
       API_HOST: "${API_HOST}"
@@ -41,7 +42,7 @@ services:
       - 127.0.0.1:3306:3306
     volumes:
       - mysql:/var/lib/mysql
-      - ./admin/vendure.sql:/docker-entrypoint-initdb.d/vendure.sql
+      # - ./admin/vendure.sql:/docker-entrypoint-initdb.d/vendure.sql
     environment:
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
       MYSQL_USER: "${MYSQL_USERNAME}"
@@ -69,3 +70,4 @@ services:
 volumes:
   ssl_data:
   mysql:
+  assets:
