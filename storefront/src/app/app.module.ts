@@ -11,6 +11,37 @@ import { HomePageComponent } from './core/components/home-page/home-page.compone
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
+import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+
+const cookieConfig = {
+  cookie: {
+    domain: 'localhost' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
+  },
+  palette: {
+    popup: {
+      background: '#000000',
+      text: '#ffffff',
+      link: '#ffffff'
+    },
+    button: {
+      background: '#f1d600',
+      text: '#000000',
+      border: 'transparent'
+    }
+  },
+  theme: 'edgeless' as const,
+  type: 'info' as const,
+  position: 'bottom' as const,
+  content: {
+    message: 'This website uses cookies to ensure you get the best experience on our website.',
+    dismiss: 'Got it!',
+    deny: 'Refuse cookies',
+    link: 'Learn more',
+    href: '/policy',
+    policy: 'Cookie Policy'
+  }
+};
+
 const STATE_KEY = makeStateKey<any>('apollo.state');
 
 @NgModule({
@@ -25,6 +56,7 @@ const STATE_KEY = makeStateKey<any>('apollo.state');
         CoreModule,
         SharedModule,
         ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production, registrationStrategy: 'registerWithDelay:5000'}),
+        NgcCookieConsentModule.forRoot(cookieConfig),
     ],
     bootstrap: [AppComponent],
 })
