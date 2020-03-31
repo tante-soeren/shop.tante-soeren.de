@@ -1,8 +1,7 @@
 node_modules
 dist
-static/assets
-static/email/test-emails
+admin/static/assets
+admin/static/email/test-emails
 .htpasswd
 .env
 .idea
-

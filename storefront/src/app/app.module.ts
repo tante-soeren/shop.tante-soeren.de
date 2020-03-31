@@ -21,12 +21,12 @@ const cookieConfig = {
     popup: {
       background: '#000000',
       text: '#ffffff',
-      link: '#ffffff'
+      link: '#f8f9fa',
     },
     button: {
       background: '#f1d600',
       text: '#000000',
-      border: 'transparent'
+      border: 'transparent',
     }
   },
   theme: 'edgeless' as const,
