@@ -72,6 +72,7 @@ export const config: VendureConfig = {
             route: 'assets',
             assetUploadDir: path.join(__dirname, '../static/assets'),
             port: 3001,
+            assetUrlPrefix: `${process.env.API_HOST || 'http://localhost'}:${process.env.API_PORT || 3000}/assets/`,
         }),
         DefaultSearchPlugin,
         emailPlugin,
