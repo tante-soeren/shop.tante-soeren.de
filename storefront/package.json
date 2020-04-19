@@ -14,7 +14,7 @@
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build --prod && ng run reference-storefront:server:production",
     "prerender": "ng run reference-storefront:prerender",
-    "translate": "ng xi18n --output-path src/translate/ --out-file messages.en.xlf --i18n-locale en-US"
+    "translate": "ng xi18n --output-path translate/ --out-file messages.en.xlf --i18n-locale en-US"
   },
   "private": true,
   "dependencies": {
