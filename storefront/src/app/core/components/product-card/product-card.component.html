@@ -11,7 +11,7 @@
                 <ng-template [ngIf]="product.priceWithTax.min === product.priceWithTax.max" [ngIfElse]="range">
                     {{ product.priceWithTax.min | formatPrice }}
                 </ng-template>
-                <ng-template #range>
+                <ng-template i18n="@@from-product.priceWIthTax.min" #range>
                     From {{ product.priceWithTax.min | formatPrice }}
                 </ng-template>
             </div>

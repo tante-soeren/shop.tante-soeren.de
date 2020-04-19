@@ -13,6 +13,15 @@ import { SharedModule } from './shared/shared.module';
 
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
 
+import { registerLocaleData } from '@angular/common';
+import localeEn from '@angular/common/locales/en';
+import localeEnExtra from '@angular/common/locales/extra/en';
+import localeDe from '@angular/common/locales/de';
+import localeDeExtra from '@angular/common/locales/extra/de';
+
+registerLocaleData(localeEn, 'en-GB', localeEnExtra);
+registerLocaleData(localeDe, 'de-DE', localeDeExtra);
+
 const cookieConfig = {
   cookie: {
     domain: 'localhost' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)

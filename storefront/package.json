@@ -13,7 +13,8 @@
     "dev:ssr": "ng run reference-storefront:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build --prod && ng run reference-storefront:server:production",
-    "prerender": "ng run reference-storefront:prerender"
+    "prerender": "ng run reference-storefront:prerender",
+    "translate": "ng xi18n --output-path src/translate/ --out-file messages.en.xlf --i18n-locale en-US"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/compiler": "^9.0.2",
     "@angular/core": "^9.0.2",
     "@angular/forms": "^9.0.2",
+    "@angular/localize": "^9.1.2",
     "@angular/platform-browser": "^9.0.2",
     "@angular/platform-browser-dynamic": "^9.0.2",
     "@angular/platform-server": "^9.0.2",
@@ -44,6 +46,7 @@
     "cookieconsent": "^3.1.1",
     "core-js": "^3.1.3",
     "express": "^4.15.2",
+    "global": "^4.4.0",
     "graphql": "^14.3.1",
     "graphql-tag": "^2.10.1",
     "ngx-cookieconsent": "^2.2.3",
@@ -55,7 +58,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.3",
     "@angular-devkit/build-ng-packagr": "~0.900.3",
-    "@angular/cli": "^9.0.3",
+    "@angular/cli": "^9.1.1",
     "@angular/compiler-cli": "^9.0.2",
     "@angular/language-service": "^9.0.2",
     "@nguniversal/builders": "^9.0.0",

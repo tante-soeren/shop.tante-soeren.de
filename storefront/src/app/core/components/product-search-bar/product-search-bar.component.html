@@ -3,6 +3,8 @@
            [formControl]="searchTerm"
            (keydown.enter)="doSearch(searchTerm.value)"
            class="form-control"
+           i18n-placeholder="@search..."
            placeholder="Search..."
+           i18n-aria-label="@@searchInput"
            aria-label="Search input">
 </div>

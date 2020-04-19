@@ -11,7 +11,8 @@
                           [address]="cart.shippingAddress">
             <button class="btn btn-secondary"
                     *ngIf="(activeStage$ | async) === 3"
-                    (click)="changeShippingAddress()">Change
+                    (click)="changeShippingAddress()" i18n="@@change">
+                Change
             </button>
         </vsf-address-card>
     </div>

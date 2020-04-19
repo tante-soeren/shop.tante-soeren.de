@@ -6,31 +6,36 @@
                 <a class="list-group-item list-group-item-action"
                    [routerLink]="['./']"
                    [routerLinkActiveOptions]="{ exact: true }"
-                   routerLinkActive="active">
+                   routerLinkActive="active"
+                   i18n="@@dashboard">
                     Dashboard
                 </a>
                 <a class="list-group-item list-group-item-action"
                    [routerLink]="['./', 'orders']"
-                   routerLinkActive="active">
+                   routerLinkActive="active"
+                   i18n="@@orders">
                     Orders
                 </a>
                 <a class="list-group-item list-group-item-action"
                    [routerLink]="['./', 'address-book']"
-                   routerLinkActive="active">
+                   routerLinkActive="active"
+                   i18n="@@addressBook">
                     Address book
                 </a>
                 <a class="list-group-item list-group-item-action"
                    [routerLink]="['./', 'details']"
-                   routerLinkActive="active">
+                   routerLinkActive="active"
+                   i18n="@@personalDetails">
                     Personal details
                 </a>
                 <a class="list-group-item list-group-item-action"
                    [routerLink]="['./', 'change-credentials']"
-                   routerLinkActive="active">
+                   routerLinkActive="active"
+                   i18n="@@changeCredentials">
                     Change credentials
                 </a>
                 <a class="list-group-item">
-                    <button class="btn btn-warning btn-sm btn-block" (click)="signOut()">Sign out</button>
+                    <button class="btn btn-warning btn-sm btn-block" (click)="signOut()" i18n="@@signOut">Sign out</button>
                 </a>
             </div>
         </div>

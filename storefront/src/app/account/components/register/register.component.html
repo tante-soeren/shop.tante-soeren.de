@@ -2,18 +2,21 @@
       (submit)="register()">
     <vsf-centered-card>
             <input class="form-control"
+                   i18n-placeholder="@@firstName"
                    placeholder="First name"
                    name="firstName"
                    required
                    [disabled]="registrationSent"
                    [(ngModel)]="firstName">
             <input class="form-control mt-1"
+                   i18n-placeholder="@@lastName"
                    placeholder="Last name"
                    name="lastName"
                    required
                    [disabled]="registrationSent"
                    [(ngModel)]="lastName">
             <input class="form-control mt-1"
+                   i18n-placeholder="@@emailAddress"
                    placeholder="Email address"
                    name="emailAddress"
                    required
@@ -24,10 +27,11 @@
 
         <button class="btn btn-primary btn-block mt-3"
                 [disabled]="registerForm.invalid || registrationSent"
-                type="submit">
+                type="submit"
+                i18n="@@register">
             Register
         </button>
-        <div *ngIf="registrationSent" class="registration-sent">
+        <div *ngIf="registrationSent" class="registration-sent" i18n="@@_successRegistration">
             Great! Now check your email ({{ emailAddress }}) to complete registration.
         </div>
     </vsf-centered-card>

@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 class="display-4 mt-5">Top Sellers</h3>
+    <h3 class="display-4 mt-5" i18n="@@topSellers">Top Sellers</h3>
     <div class="product-list">
         <ng-container *ngIf="topSellersLoaded$ | async; else placeholders">
             <vsf-product-card *ngFor="let product of topSellers$ | async" [product]="product"></vsf-product-card>
