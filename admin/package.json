@@ -14,7 +14,7 @@
   "dependencies": {
     "@vendure/admin-ui-plugin": "0.10.1",
     "@vendure/asset-server-plugin": "0.10.1",
-    "@vendure/core": "0.10.1",
+    "@vendure/core": "1.9.1",
     "@vendure/email-plugin": "0.10.1",
     "braintree": "^2.22.0",
     "concurrently": "5.1.0",
